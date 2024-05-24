@@ -13,7 +13,7 @@ ex)
 const element = <h1>Hello, world! </h1>;
 ```
 
-<br> 
+<br> <br>
 
 ## JSX 역할
 JSX 코드를 JavaScript 코드로 변환하는 역할을 하는 것이 createElement 함수.
@@ -50,20 +50,25 @@ React.createElement(
 1. 간결해지는 코드
 <br>
 JSX 사용함
+
 ```JSX
 <div>Hello, {name}</div>
 ```
+
 <br>
 JSX 사용 안함
+
 ```JavaScript
 React.createElement('div',null,'Hello, ${name}');
 ```
+
 <br>
 
 2. 가독성 향상 (가독성이 높을수록 버그를 찾기 쉬움)<br>
 3. Injection Attacks 방어<br>
 Injection Attacks라는 해킹 방법을 방어함. <br>
 Injection Attacks는 입력창에 문자/숫자 같은 일반적 값이 아닌 소스 코드를 입력하여 해당 코드가 실행되도록 만드는 해킹 방법.<br>
+<br>
 
 ## JSX 사용법
 HTML과 자바스크립트가 섞인 형태.
@@ -82,5 +87,6 @@ const element = (
     </h1>
 );
 ```
+<br><br>
 
 ## 실습. JSX 코드 작성해보기
