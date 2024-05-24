@@ -1,6 +1,6 @@
 # 처음 만난 리액트
 
-<img src="https://image.yes24.com/goods/124149305/XL" alt="처음 만난 리액트" width="40%" height="40%">
+<img src="https://image.yes24.com/goods/124149305/XL" alt="처음 만난 리액트" width="45%" height="45%">
 
 <br>
 
