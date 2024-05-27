@@ -67,6 +67,9 @@ React.createElement(
 Then, 화면에 변경된 엘리먼트들을 보여주기 위한 방법은? 기존 엘리먼트를 변겅하는 것이 아니라 새로운 엘리먼트를 만들어 기존 엘리먼트와 바꿔치기 하면 됨. 
 <br>
 <img src="./sources/ReactElementschange.png", width="50%",height="50%">
+
+<br>
+
 화면에 새로운 내용을 보여주기 위해서 Virtual DOM은 변경된 부분을 계산, 컴퓨터 딥하고 해당 부분만을 다시 렌더링. 
 <br>
 
