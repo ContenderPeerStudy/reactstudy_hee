@@ -36,3 +36,6 @@
 ## :pushpin: 목표
 -[ ]리액트에 익숙해기 <br>
 -[ ]마크다운 연습하기
+
+## :pushpin: 어려웠던 부분
+-[ ]4강. #1.elements 분석 (react -> html)
