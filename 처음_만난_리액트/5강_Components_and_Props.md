@@ -266,3 +266,10 @@ ReactDOM.render(
 <br><br>
 
 ## 실습. 댓글 컴포넌트 만들기
+
+<br>
+
+<img src="./sources/comment.png">
+
+<br>
+<br>
