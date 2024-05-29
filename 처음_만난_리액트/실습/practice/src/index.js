@@ -6,12 +6,14 @@ import reportWebVitals from './reportWebVitals';
 
 import Clock from './4강/Clock';
 import CommentList from './5강/CommentList';
+import NotificationList from './6강/NotificationList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 setInterval(() => {
   root.render(
     <React.StrictMode>
       <CommentList />
+      <NotificationList />
     </React.StrictMode>
   );
 }, 1000);
