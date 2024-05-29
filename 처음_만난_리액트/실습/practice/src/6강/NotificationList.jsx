@@ -37,7 +37,7 @@ class NotificationList extends React.Component{
                 const index = notifications.length;
                 notifications.push(reservedNotifications[index]);
                 this.setState({
-                    notifications: [],
+                    notifications: notifications,
                 });
             }else{
                 clearInterval(timer);
@@ -46,8 +46,9 @@ class NotificationList extends React.Component{
         },  1000);
 
     }
-
+        
     // https://www.inflearn.com/questions/619705/notificationlist-jsx-챕터-6장-실습-내용-질문-동시에-2개씩-나옴?commentId=205023#205023 Q&A 참고..
+    
     componentWillUnmount() {
 
         if (timer) {
@@ -56,8 +57,7 @@ class NotificationList extends React.Component{
         
         }
         
-        }
-        
+    }
 
     render() {
         return(

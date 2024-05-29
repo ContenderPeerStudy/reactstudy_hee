@@ -65,3 +65,7 @@ chrome에서 react developer tool 확장 프로그램 설치.
 
 ## 실습. Lifecycle method 사용해보기
 <br><br>
+
+<img src = "./sources/notifications.png">
+
+<br>
