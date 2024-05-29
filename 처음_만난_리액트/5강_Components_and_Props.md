@@ -4,7 +4,7 @@
 <h3>복습</h3>
 <br>
 
-> 리액트는 컴포넌트 기반의 구조라는 특징이 있음. <br>
+> 리액트는 컴포넌트 기반의 구조라는 특징이 있음. 
 리엑트에서는 모든 페이지가 컴포넌트로 구성되어 있고 하나의 컴포넌트는 또 다른 여러 개의 컴포넌트의 조합으로 구성될 수 있음. 
 <br><br>
 
@@ -13,7 +13,7 @@
 
 
 *React element = 리액트 앱을 구성하는 가장 작은 빌딩 블록들.
-+ 자바스크립트 객체 형태로 존재하며 화면에 보이는 것을 기술함. 
+ 자바스크립트 객체 형태로 존재하며 화면에 보이는 것을 기술함. 
 
 ## Props
 Prop 뒤에 s가 붙어 프랍이 여러 개인 것을 의미함. <br>
@@ -51,7 +51,10 @@ function withdraw(account, amount){
     account.toal -= amount; // impure함.
 }
 ```
-리액트 컴포넌트 정의 <br>
+<br>
+
+<b>리액트 컴포넌트 정의</b> <br>
+
 > All React components must act like pure functions with respect to their props. <br>
 모든 리액트 컴포넌트는 그들의 Props에 관해서는 Pure 함수 같은 역할을 해야 한다. 
 
@@ -62,7 +65,8 @@ function withdraw(account, amount){
 ## Props 사용법
 <br>
 
-1. JSX 사용
+### JSX 사용
+<br>
 JSX를 사용하는 경우, 아래 코드와 같이 키와 값으로 이루어진 키 값 상의 형태로 컴포넌트에 props를 넣을 수 있음.
 <br>
 
@@ -134,3 +138,91 @@ React.createElement(
 );
 ```
 <br>
+
+## React Component 만들기 
+<br>
+
+<img src="./sources/ReactComponent.png">
+
+<br>
+리액트에서의 컴포넌트는 크게 함수 컴포넌트와 클래스 컴포넌트로 나뉨.
+리액트 초기에는 클래스 컴포넌트를 주로 사용했지만 클래스 컴포넌트가 사용하기 불편하다는 의견이 많이 나와 이후에는 함수 컴포넌트를 개선해서 사용하게 됨. 함수 컴포넌트를 개선하는 과정에서 개발된 것이 바로 Hooks. 
+<br><br>
+
+### Function Component (함수 컴포넌트)
+<br>
+<b> 장점 </b> : 간단한 코드
+<br>
+
+```JavaScript
+// Welcome이라는 함수의 경우, 하나의 props 객체를 받아서 인삿말이 담긴 React element를 리턴하기 때문에 React Component라고 할 수 있음. 그리고 이렇게 생긴 것을 함수 컴포넌트라고 함. 
+function Welcome(props){
+    return <h1> 안녕, {props.name} </h1>;
+}
+```
+<br><br>
+
+### Class Component (클래스 컴포넌트)
+<br>
+함수 컴포넌트에 비해서 몇 가지 추가적인 기능을 갖고 있음. 
+<br>
+
+```JavaScript
+// 위에서 살펴본 함수 컴포넌트 welcome과 동일한 역할을 하는 컴포넌트를 클래스 형태로 제작한 소스코드. 함수 컴포넌트와의 가장 큰 차이점은 React의 모든 클래스 컴포넌트는 React.Component를 상속받아서 만든다는 것!!!
+
+class Welcome extends React.Component{
+    render(){
+        return <h1> 안녕, {this.props.name}</h1>;
+    }
+}
+```
+<br><br>
+
+## Component 이름
+<br>
+- 컴포넌트 이름은 항상 대문자로 시작해야 함
+*cuz...React는 소문자로 시작하는 컴포넌트를 DOM 태그로 인식하기 때문. 
+ex) div/span과 같이 사용하는 것은 내장 컴포넌트라는 것을 의미. 
+<br>
+<b> HTML div 태그로 인식 </b>
+
+```JavaScript
+const element = <div />;
+```
+<br>
+<b> Welcome이라는 React Component로 인식 </b>
+
+```JavaScript
+const element = <Welcome name = "hee" />;
+```
+<br><br>
+
+## Component 렌더링
+컴포넌트를 다 만든 이후 렌더링은 어떻게..? how?
+가장 먼저 컴포넌트로부터 엘리먼트를 만들어야 함. 
+
+<b> DOM 태그를 사용한 element </b>
+
+```JavaScript
+const element = <div />;
+```
+<br>
+<b> 사용자가 정의한 Component를 사용한 element </b>
+
+```JavaScript
+const element = <Welcome name = "hee" />;
+```
+
+두 코드는 모두 React element를 만들어냄. 그러면 이를 바탕으로 이제 이 엘리먼트를 렌더링하면 됨. 
+
+```JavaScript
+function Welcome(props){
+    return <h1>hello, {props.name}</h1>;
+}
+
+const element = <Welcome name ="hee" />;
+ReactDOM.render(
+    element, 
+    document.getElementById('root')
+);
+```
