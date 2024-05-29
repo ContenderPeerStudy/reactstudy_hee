@@ -5,12 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import Clock from './4강/Clock';
+import CommentList from './5강/CommentList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 setInterval(() => {
   root.render(
     <React.StrictMode>
-      <Clock />
+      <CommentList />
     </React.StrictMode>
   );
 }, 1000);

@@ -212,10 +212,12 @@ const element = <div />;
 ```JavaScript
 const element = <Welcome name = "hee" />;
 ```
-
-두 코드는 모두 React element를 만들어냄. 그러면 이를 바탕으로 이제 이 엘리먼트를 렌더링하면 됨. 
+<br>
+두 코드는 모두 React element를 만들어냄. 그러면 이를 바탕으로 이제 이 엘리먼트를 렌더링하면 됨. <br>
 
 ```JavaScript
+// Welcome이라는 함수 컴포넌트 선언 후 Welcome name = "hee" 라는 값을 가진 엘리먼트를 파라미터로 해서 reactDomrender 함수를 호출함. 이러면 리액트는 Welcome 컴포넌트에 name hee라는 props를 넣어서 호출하고 그 결과로 리액트 엘리먼트가 생성됨. 이렇게 생성된 엘리먼트는 리액트 돔을 통해 실제 돔에 효과적으로 업데이트되고 우리가 브라우저를 통해서 볼 수 있게 됨. 
+
 function Welcome(props){
     return <h1>hello, {props.name}</h1>;
 }
@@ -226,3 +228,41 @@ ReactDOM.render(
     document.getElementById('root')
 );
 ```
+<br><br>
+
+## Component 합성
+여러 개의 컴포넌트를 합쳐서 하나의 컴포넌트를 만드는 것. <br>
+리액트에서는 컴포넌트 안에도 다른 컴포넌트를 사용할 수 있기 때문에 복잡한 화면을 여러 개의 Component로 나눠서 구현 가능. 
+
+```JavaScript
+function Welcome(props){
+    return <h1> 안녕, {props.name} </h1>;
+}
+
+// 이렇게 여러 개의 컴포넌트를 합쳐서 또 다른 컴포넌트를 만드는 것을 컴포넌트 합성이라고 함. 
+function App(props){
+    return(
+        <div>
+            <Welcome name="Jen" />
+            <Welcome name="Hee" />
+            <Welcome name="KIM" />
+        </div>
+    );
+}
+
+ReactDOM.render(
+    <App />
+    document.getElementById('root')
+);
+
+
+```
+<br><br>
+
+## Component 추출
+복잡한 컴포넌트를 쪼개서 여러 개의 컴포넌트로 나누는 것. <br>
+큰 컴포넌트에서 일부를 추출해 새로운 컴포넌트를 만드는 것. <br>
+컴포넌트 추출 잘 활용 시, 재사용성이 높아짐 -> 개발 속도 향상. 
+<br><br>
+
+## 실습. 댓글 컴포넌트 만들기
