@@ -39,3 +39,4 @@
 
 ## :pushpin: 어려웠던 부분
 -[ ]4강. #1.elements 분석 (react -> html)
+-[ ]search out more about callback function&map 
